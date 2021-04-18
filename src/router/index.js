@@ -6,8 +6,13 @@ import Header from "../components/Header";
 
 import routes from "./config";
 import GlobalStyles from "../globalStyles";
+import Maintenance from "../pages/Maintenance";
 
 const Router = () => {
+  console.log(process.env.MAINTENANCE);
+  if (process.env.REACT_APP_MAINTENANCE) {
+    return <Maintenance />;
+  }
   return (
     <Suspense fallback={null}>
       <GlobalStyles />
